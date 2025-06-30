@@ -105,4 +105,44 @@ body {
     padding: 20px;
     margin-top: 40px;
   }
-  
+  /* Responsive Layout */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .img-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-img {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .quiz {
+    padding: 10px;
+  }
+}
