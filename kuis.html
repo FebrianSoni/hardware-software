@@ -6,36 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuis Hardware & Software</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    let score = 0;
-    let totalAnswered = 0;
-    const totalQuestions = 15;
-
-    function checkAnswer(button, isCorrect) {
-      if (button.classList.contains("answered")) return;
-
-      totalAnswered++;
-      button.classList.add("answered");
-      button.disabled = true;
-      button.parentElement.querySelectorAll("button").forEach(btn => {
-        btn.disabled = true;
-        if (btn !== button) btn.classList.add("not-chosen");
-      });
-
-      if (isCorrect) {
-        button.classList.add("correct");
-        score++;
-      } else {
-        button.classList.add("incorrect");
-      }
-
-      document.getElementById("score-display").innerText = `Skor: ${score} / ${totalQuestions}`;
-
-      if (totalAnswered === totalQuestions) {
-        document.getElementById("score-display").innerText += " ✅ Kuis selesai!";
-      }
-    }
-  </script>
+  <script src="script.js" defer></script>
   <style>
     .correct { background-color: #4CAF50; color: white; }
     .incorrect { background-color: #f44336; color: white; }
@@ -46,95 +17,207 @@
 </head>
 <body>
   <header>
-    <h1>🧠 Kuis Interaktif</h1>
+    <h1>🧠 Soal Latihan</h1>
     <nav>
-      <a href="index.html">Beranda</a> | <a href="hardware.html">Hardware</a> | <a href="software.html">Software</a>
+      <a href="index.html">Beranda</a>
+      <a href="kompetensi_dasar.html">Kompetensi Dasar</a>
+      <a href="petunjuk_penggunaan.html">Petunjuk Penggunaan</a>
+      <a href="hardware.html">Hardware</a>
+      <a href="software.html">Software</a>
+      <a href="kuis.html">Soal Latihan</a>
     </nav>
   </header>
 
   <section id="quiz">
-    <h2>🧠 Kuis: Hardware vs Software</h2>
-    <div id="score-display">Skor: 0 / 15</div>
+    <h2>🧠 Soal Latihan: Hardware & Software</h2>
+    <div id="score-display">Skor: 0 / 25</div>
 
     <!-- SOAL-SOAL DIMUAT DI SINI -->
-    <!-- (Soal-soal dari versi sebelumnya tetap sama dan akan ditampilkan secara otomatis) -->
 
     <div class="quiz">
       <p>1. Mana yang termasuk hardware?</p>
       <button onclick="checkAnswer(this, true)">Keyboard</button>
       <button onclick="checkAnswer(this, false)">Photoshop</button>
+      <button onclick="checkAnswer(this, false)">Spotify</button>
     </div>
+
     <div class="quiz">
       <p>2. Fungsi utama dari CPU adalah?</p>
       <button onclick="checkAnswer(this, true)">Memproses data</button>
       <button onclick="checkAnswer(this, false)">Menampilkan gambar</button>
+      <button onclick="checkAnswer(this, false)">Mencetak gambar</button>
     </div>
+
     <div class="quiz">
       <p>3. Contoh software pengolah gambar adalah?</p>
       <button onclick="checkAnswer(this, true)">Adobe Photoshop</button>
       <button onclick="checkAnswer(this, false)">Scanner</button>
+      <button onclick="checkAnswer(this, false)">Ms. Excel</button>
     </div>
+
     <div class="quiz">
       <p>4. Alat untuk memindai dokumen fisik ke komputer adalah?</p>
       <button onclick="checkAnswer(this, false)">Speaker</button>
       <button onclick="checkAnswer(this, true)">Scanner</button>
+      <button onclick="checkAnswer(this, false)">Mouse</button>
     </div>
+
     <div class="quiz">
       <p>5. Windows termasuk dalam kategori?</p>
       <button onclick="checkAnswer(this, true)">Sistem Operasi</button>
       <button onclick="checkAnswer(this, false)">Hardware</button>
+      <button onclick="checkAnswer(this, false)">Perangkat keras</button>
     </div>
+
     <div class="quiz">
       <p>6. RAM berfungsi untuk?</p>
-      <button onclick="checkAnswer(this, true)">Menyimpan data sementara</button>
       <button onclick="checkAnswer(this, false)">Menampilkan video</button>
+      <button onclick="checkAnswer(this, false)">Mengetikan data</button>
+      <button onclick="checkAnswer(this, true)">Menyimpan data sementara</button>
     </div>
+
     <div class="quiz">
       <p>7. Aplikasi Spotify digunakan untuk?</p>
-      <button onclick="checkAnswer(this, true)">Mendengarkan musik</button>
+      <button onclick="checkAnswer(this, false)">Membuat musik</button>
       <button onclick="checkAnswer(this, false)">Mengedit gambar</button>
+      <button onclick="checkAnswer(this, true)">Mendengarkan musik</button>
     </div>
+
+  <div>
+    <p>8. Apa fungsi dari perangkat ini?</p>
+    <img id="vga-img" src="VGA.jpg"  alt="Contoh VGA Card" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, false)">Memperlambat komputer</button>
+    <button onclick="checkAnswer(this, true)">Mempercepat kinerja grafis, terutama game dan editing</button>
+    <button onclick="checkAnswer(this, false)">Sebagai penyimpanan sementara</button>
+  </div>
+
     <div class="quiz">
-      <p>8. Perangkat yang menampilkan tampilan komputer disebut?</p>
+      <p>9. Perangkat yang menampilkan tampilan komputer disebut?</p>
       <button onclick="checkAnswer(this, false)">Mouse</button>
       <button onclick="checkAnswer(this, true)">Monitor</button>
-    </div>
-    <div class="quiz">
-      <p>9. Contoh software pengolah video adalah?</p>
-      <button onclick="checkAnswer(this, true)">Blender</button>
       <button onclick="checkAnswer(this, false)">Keyboard</button>
     </div>
     <div class="quiz">
-      <p>10. Perangkat keras untuk mencetak dokumen disebut?</p>
-      <button onclick="checkAnswer(this, false)">Speaker</button>
-      <button onclick="checkAnswer(this, true)">Printer</button>
-    </div>
-    <div class="quiz">
-      <p>11. Software yang digunakan untuk membuat dokumen teks?</p>
-      <button onclick="checkAnswer(this, true)">Microsoft Word</button>
-      <button onclick="checkAnswer(this, false)">Joystick</button>
-    </div>
-    <div class="quiz">
-      <p>12. Perangkat keras utama tempat semua komponen komputer terhubung adalah?</p>
-      <button onclick="checkAnswer(this, true)">Motherboard</button>
-      <button onclick="checkAnswer(this, false)">RAM</button>
-    </div>
-    <div class="quiz">
-      <p>13. Aplikasi yang berfungsi untuk desain grafis?</p>
-      <button onclick="checkAnswer(this, true)">CorelDRAW</button>
-      <button onclick="checkAnswer(this, false)">Scanner</button>
-    </div>
-    <div class="quiz">
-      <p>14. Fungsi utama dari touchpad adalah?</p>
-      <button onclick="checkAnswer(this, false)">Mencetak dokumen</button>
-      <button onclick="checkAnswer(this, true)">Mengontrol kursor</button>
-    </div>
-    <div class="quiz">
-      <p>15. AutoCAD digunakan untuk?</p>
-      <button onclick="checkAnswer(this, true)">Desain teknis</button>
-      <button onclick="checkAnswer(this, false)">Mendengarkan musik</button>
+      <p>10. Contoh software pengolah animasi 3D adalah?</p>
+      <button onclick="checkAnswer(this, true)">Blender</button>
+      <button onclick="checkAnswer(this, false)">Keyboard</button>
+      <button onclick="checkAnswer(this, false)">Ms. Word</button>
     </div>
 
+    <div class="quiz">
+      <p>11. Perangkat keras untuk mencetak dokumen disebut?</p>
+      <button onclick="checkAnswer(this, false)">Speaker</button>
+      <button onclick="checkAnswer(this, true)">Printer</button>
+      <button onclick="checkAnswer(this, false)">Sprint</button>
+    </div>
+
+    <div class="quiz">
+      <p>12. Software yang digunakan untuk membuat dokumen teks?</p>
+      <button onclick="checkAnswer(this, true)">Microsoft Word</button>
+      <button onclick="checkAnswer(this, false)">Joystick</button>
+      <button onclick="checkAnswer(this, false)">CapCut</button>
+    </div>
+
+    <div class="quiz">
+      <p>13. Perangkat keras utama tempat semua komponen komputer terhubung adalah?</p>
+      <button onclick="checkAnswer(this, true)">Motherboard</button>
+      <button onclick="checkAnswer(this, false)">RAM</button>
+      <button onclick="checkAnswer(this, false)">Monitor</button>
+    </div>
+
+    <div class="quiz">
+      <p>14. Aplikasi yang berfungsi untuk desain grafis?</p>
+      <button onclick="checkAnswer(this, true)">CorelDRAW</button>
+      <button onclick="checkAnswer(this, false)">Scanner</button>
+      <button onclick="checkAnswer(this, false)">Drive</button>
+    </div>
+
+    <div class="quiz">
+      <p>15. Fungsi utama dari touchpad adalah?</p>
+      <button onclick="checkAnswer(this, false)">Mencetak dokumen</button>
+      <button onclick="checkAnswer(this, true)">Mengontrol kursor</button>
+      <button onclick="checkAnswer(this, false)">Mengeluarkan suara</button>
+    </div>
+
+    <div class="quiz">
+      <p>16. AutoCAD digunakan untuk?</p>
+      <button onclick="checkAnswer(this, true)">Desain teknis 3D dan 2D</button>
+      <button onclick="checkAnswer(this, false)">Mendengarkan musik</button>
+      <button onclick="checkAnswer(this, false)">Membuat table data angka</button>
+    </div>
+
+    <div class="quiz">
+      <p>17. Merupakan gambar dari?</p>
+      <img id=cpu-img src=cpu.jpg alt="Contoh CPU" class="gambar-kuis" />
+      <button onclick="checkAnswer(this, true)">CPU</button>
+      <button onclick="checkAnswer(this, false)">GPU</button>
+      <button onclick="checkAnswer(this, false)">RAM</button>
+    </div>
+
+  <div>
+    <p>18. Gambar logo software ini biasa digunakan untuk?</p>
+    <img id=capcut-img src=capcut.png alt="Contoh capcut" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, false)">Mendengarkan musik</button>
+    <button onclick="checkAnswer(this, false)">Menginput data </button>
+    <button onclick="checkAnswer(this, true)">Membuat dan mengedit video </button>
+  </div>
+
+  <div>
+    <p>19. Jika ingin membuat animasi seperti gambar dibawah, menggunakan software apa?</p>
+    <img id=3dnaga-img src=3dnaga.png alt="Contoh 3d naga" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, true)"><img id="blender" src="blender.png" alt="contoh blender" class="gambar-pilgan"></button>
+    <button onclick="checkAnswer(this, false)"><img id="spotify" src="spotify.png" alt="contoh spotify" class="gambar-pilgan"></button>
+    <button onclick="checkAnswer(this, false)"><img id="potoshop" src="potoshop.png" alt="contoh potoshop" class="gambar-pilgan"></button>
+  </div>
+
+  <div>
+    <p>20. Apa nama perangkat ini, berfungsi untuk?</p>
+    <img id=hardisk-img src=hardisk.jpg alt="Contoh hardisk" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, false)">Ram, menyimpan data sementara</button>
+    <button onclick="checkAnswer(this, false)">Hardisk, mengatur kursor di layar </button>
+    <button onclick="checkAnswer(this, true)">Hardisk, perangkat penyimpanan data permanen</button>
+  </div>
+
+  <div>
+    <p>21. Apa nama perangkat ini, berfungsi untuk?</p>
+    <img id=keyboard-img src=keyboard.jpg alt="Contoh keyboard" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, false)">Keyboard, menampilkan gambar</button>
+    <button onclick="checkAnswer(this, true)">Keyboard, mengetikan data</button>
+    <button onclick="checkAnswer(this, false)">RAM, perangkat penyimpanan data permanen</button>
+  </div>
+
+  <div>
+    <p>22. Dibawah ini mana gambar prosesor?</p>
+    <button onclick="checkAnswer(this, false)"><img id="motherboard" src="motherboard.jpg" alt="contoh motherboard" class="gambar-pilgan"></button>
+    <button onclick="checkAnswer(this, false)"><img id="ram" src="ram.jpg" alt="contoh ram" class="gambar-pilgan"></button>
+    <button onclick="checkAnswer(this, true)"><img id="cpu" src="cpu.jpg" alt="contoh cpu" class="gambar-pilgan"></button>
+  </div>
+
+  <div>    
+    <p>23. Apa nama perangkat ini, berfungsi untuk?</p>
+    <img id=ram-img src=RAM.jpg alt="Contoh ram" class="gambar-kuis" />
+    <button onclick="checkAnswer(this, false)">RAM, menampilkan gambar, video dan suara</button>
+    <button onclick="checkAnswer(this, true)">RAM, perangkat penyimpanan data sementara</button>
+    <button onclick="checkAnswer(this, false)">REM, memperlambat laju kendaraan</button>
+  </div>
+
+<div>
+  <p>24. Dibawah ini mana yang bukan perangkat lunak?</p>
+  <button onclick="checkAnswer(this, false)"><img id="ps" src="potoshop.png" alt="contoh ps" class="gambar-pilgan"></button>
+  <button onclick="checkAnswer(this, false)"><img id="msword" src="msword.png" alt="contoh msword" class="gambar-pilgan"></button>
+  <button onclick="checkAnswer(this, true)"><img id="ram" src="ram.jpg" alt="contoh ram" class="gambar-pilgan"></button>
+</div>
+
+<div>
+  <p>25. Dibawah ini mana yang yang termasuk perangkat lunak?</p>
+  <button onclick="checkAnswer(this, false)"><img id="ram" src="ram.jpg" alt="contoh ram" class="gambar-pilgan"></button>
+  <button onclick="checkAnswer(this, false)"><img id="printer" src="printer.jpg" alt="contoh printer" class="gambar-pilgan"></button>
+  <button onclick="checkAnswer(this, true)"><img id="Chrome" src="chrome.jpg" alt="contoh chrome" class="gambar-pilgan"></button>
+</div>
+
   </section>
+  <footer>
+    <p>&copy; 2025 Pembelajaran Informatika | Febrian Soni Saputra</p>
+  </footer>
 </body>
 </html>
