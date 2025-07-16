@@ -18,19 +18,11 @@
 <body>
   <header>
     <h1>🧠 Soal Latihan</h1>
-    <nav>
-      <a href="index.html">Beranda</a>
-      <a href="kompetensi_dasar.html">Kompetensi Dasar</a>
-      <a href="petunjuk_penggunaan.html">Petunjuk Penggunaan</a>
-      <a href="hardware.html">Hardware</a>
-      <a href="software.html">Software</a>
-      <a href="kuis.html">Soal Latihan</a>
-    </nav>
+
   </header>
 
   <section id="quiz">
     <h2>🧠 Soal Latihan: Hardware & Software</h2>
-    <div id="score-display">Skor: 0 / 25</div>
 
     <!-- SOAL-SOAL DIMUAT DI SINI -->
 
@@ -49,7 +41,7 @@
     </div>
 
     <div class="quiz">
-      <p>3. Contoh software pengolah gambar adalah?</p>
+      <p>3. Contoh software untuk mengedit gambar adalah?</p>
       <button onclick="checkAnswer(this, true)">Adobe Photoshop</button>
       <button onclick="checkAnswer(this, false)">Scanner</button>
       <button onclick="checkAnswer(this, false)">Ms. Excel</button>
@@ -214,10 +206,39 @@
   <button onclick="checkAnswer(this, false)"><img id="printer" src="printer.jpg" alt="contoh printer" class="gambar-pilgan"></button>
   <button onclick="checkAnswer(this, true)"><img id="Chrome" src="chrome.jpg" alt="contoh chrome" class="gambar-pilgan"></button>
 </div>
-
+<div id="score-display">Skor: 0 / 100</div>
   </section>
-  <footer>
-    <p>&copy; 2025 Pembelajaran Informatika | Febrian Soni Saputra</p>
-  </footer>
+
+  
+
+  <footer>    
+    <p><em>one percent better than yesterday</em></br>
+    &copy; 2025 Pembelajaran Informatika | Febrian Soni Saputra</p></footer>
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <span>🏠</span>
+      <small>Beranda</small>
+    </a>
+    <a href="kompetensi_dasar.html" class="nav-item">
+      <span>📖</span>
+      <small>Kompetensi</small>
+    </a>
+    <a href="petunjuk_penggunaan.html" class="nav-item">
+      <span>🧭</span>
+      <small>Petunjuk</small>
+    </a>
+    <a href="hardware.html" class="nav-item">
+      <span>💻</span>
+      <small>Hardware</small>
+    </a>
+    <a href="software.html" class="nav-item">
+      <span>💾</span>
+      <small>Software</small>
+    </a>
+    <a href="kuis.html" class="nav-item">
+      <span>🧠</span>
+      <small>Soal</small>
+    </a>
+  </nav>
 </body>
 </html>
